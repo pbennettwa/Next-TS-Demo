@@ -15,26 +15,33 @@ const IndexPage: React.FC = () => {
   return (
     <div className='app'>
       <h1>Hello World!</h1>
-      <h2>The current number is {count}</h2>
+      <h2>
+        The current number is <span data-testid='value'>{count}</span>
+      </h2>
       <div>
         <input
           value={incrementAmount}
           onChange={(e) => setIncrementAmount(Number(e.target.value))}
           type='number'
-          className='input'
+          data-testid='add-amount'
         />
         &nbsp;
         <button
           onClick={() => dispatch(incrementByAmount(Number(incrementAmount)))}
+          data-testid='update-amount'
         >
           Increment by amount
         </button>
       </div>
       <div>
         <div>&nbsp;</div>
-        <button onClick={() => dispatch(decrement())}>Decrement by 1</button>
+        <button onClick={() => dispatch(decrement())} data-testid='down'>
+          Decrement by 1
+        </button>
         &nbsp;
-        <button onClick={() => dispatch(increment())}>Increment by 1</button>
+        <button onClick={() => dispatch(increment())} data-testid='up'>
+          Increment by 1
+        </button>
       </div>
     </div>
   );
