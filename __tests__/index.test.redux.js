@@ -25,6 +25,7 @@ describe('Index page', () => {
     fireEvent.change(screen.getByTestId('add-amount'), {
       target: { value: 17 },
     });
+    
     fireEvent.click(screen.getByTestId('update-amount'));
     expect(screen.getByTestId('value')).toHaveTextContent('17');
   });

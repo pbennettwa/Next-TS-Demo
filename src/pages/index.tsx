@@ -1,3 +1,4 @@
+import { NextPage } from 'next';
 import { useState } from 'react';
 import { useAppDispatch, useAppSelector } from '../app/hooks';
 import {
@@ -7,7 +8,7 @@ import {
   selectCount,
 } from '../features/counter/counterSlice';
 
-const IndexPage: React.FC = () => {
+const IndexPage: NextPage = () => {
   const dispatch = useAppDispatch();
   const count = useAppSelector(selectCount);
   const [incrementAmount, setIncrementAmount] = useState<number>(0);
